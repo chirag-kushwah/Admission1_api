@@ -6,15 +6,15 @@ class TenderController {
     static Tender_insert = async (req ,res) => {
         try {
             const { name, description, start_time, end_time, buffer_time } = req.body
-            const result = new TenderModel(req.body)
-            // const result = new TenderModel({
-            //     name: name,
-            //     description: description,
-            //     start_time: start_time,
-            //     end_time: end_time,
-            //     buffer_time: buffer_time
+           // const result = new TenderModel(req.body)
+            const result = new TenderModel({
+                name: name,
+                description: description,
+                start_time: start_time,
+                end_time: end_time,
+                buffer_time: buffer_time
 
-            // })
+            })
             if (!result) {
                 return res.status(404).json({ status: "fail", message: "tender data not found" })
             }
